@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+; 清除请在[后面加-
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.mkv\shell\OpenWithMVPlayer\command]
+@="\"E:\\projects\\1cg\\gui\\mvplayer\\out\\mvplayer-win32-x64\\mvplayer.exe\"  \"%1\""
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.mp4\shell\OpenWithMVPlayer\command]
+@="\"E:\\projects\\1cg\\gui\\mvplayer\\out\\mvplayer-win32-x64\\mvplayer.exe\"  \"%1\""
