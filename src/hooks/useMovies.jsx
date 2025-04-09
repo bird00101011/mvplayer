@@ -11,24 +11,26 @@ export default function useMovies() {
             let js = JSON.parse(ms)
             setMovies(js)
             if (js.length > 0) {
+                window.ps.setTitle(js[0].name).then((r) => { })
                 setPlayingMovie(js[0])
             }
         })
     }, [])
 
-    const playMovie = (movie) => setPlayingMovie(movie)
+    const playMovie = (movie) => {
+        window.ps.setTitle(movie.name).then((r) => { })
+        setPlayingMovie(movie)
+    }
     const toggle = () => {
         let ml = document.querySelector('ul')
         let tb = document.querySelector('span')
         if (show) {
             ml.style.display = 'none'
             tb.style.right = '0px'
-            tb.innerHTML = '='
         }
         else {
             ml.style.display = 'block'
-            tb.style.right = '185px'
-            tb.innerHTML = '&gt;'
+            tb.style.right = '147px'
         }
         setShow(!show)
     }

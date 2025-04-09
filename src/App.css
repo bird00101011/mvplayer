@@ -28,7 +28,7 @@ li {
 }
 
 ul {
-    width: 200px;
+    width: 150px;
     height: inherit;
     border-left: 2px red;
     color: white;
@@ -40,6 +40,12 @@ li {
     cursor: pointer;
     text-align: center;
     font-size: 12px;
+    white-space: nowrap;
+    /* 不换行 */
+    overflow: hidden;
+    /* 超出部分隐藏 */
+    text-overflow: ellipsis;
+    /* 显示省略号 */
 }
 
 li:hover {
@@ -50,7 +56,7 @@ li:hover {
 span {
     position: fixed;
     top: 50%;
-    right: 185px;
+    right: 147px;
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 2;

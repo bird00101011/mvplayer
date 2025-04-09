@@ -6,6 +6,10 @@ function createWindow() {
   ipcMain.handle('getMovies', async () => {
     return getMovies()
   })
+
+  ipcMain.handle('setTitle', (event, title) => {
+    win.setTitle(title)
+  })
   const win = new BrowserWindow({
     width: 800,
     height: 600,
@@ -20,6 +24,8 @@ function createWindow() {
       nodeIntegration: true
     }
   });
+  win.setMenuBarVisibility(false); // 再手动确保菜单栏不可见
+  // Menu.setApplicationMenu(null)
 
   const startUrl = process.env.ELECTRON_START_URL || `file://${path.join(__dirname, 'dist/index.html')}`;
   win.loadURL(startUrl);
